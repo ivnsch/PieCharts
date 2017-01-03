@@ -122,6 +122,10 @@ func onSelected(slice: PieSlice, selected: Bool)
 
 The layer system can be abstracted a step further in order to make the slices themselves be in a layer. This way we can combine multiple slice-layers to create more complex types of pie charts.
 
+## Credits
+
+The food images used in the demo are from freepik.com, and flaticon.com/authors/madebyoliver
+
 ## Created By:
 
 Ivan Schütz
