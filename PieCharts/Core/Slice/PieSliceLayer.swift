@@ -17,14 +17,23 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         }
     }
     
-    public var startAngle: CGFloat = 0
-    public var endAngle: CGFloat = 0
+    fileprivate(set) var startAngle: CGFloat = 0
+    fileprivate(set) var endAngle: CGFloat = 0
+    
+    var angles: (CGFloat, CGFloat) = (0, 0) {
+        didSet {
+            self.startAngle = angles.0
+            self.endAngle = angles.1
+            startAnim()
+        }
+    }
+    
     @NSManaged var startAngleManaged: CGFloat
     @NSManaged var endAngleManaged: CGFloat
     
     public var innerRadius: CGFloat = 50
     public var outerRadius: CGFloat = 100
-    public var referenceAngle: CGFloat = CGFloat.pi * 3 / 2 // Top center
+    var referenceAngle: CGFloat = CGFloat.pi * 3 / 2 // Top center
     public var selectedOffset: CGFloat = 30
     
     public weak var sliceDelegate: PieSliceDelegate?
@@ -75,14 +84,51 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         contentsScale = UIScreen.main.scale
     }
     
+    
+    var disableAnimation: Bool = false
+    
+    
+    func setStartAngles(startEndAngle: CGFloat) {
+        disableAnimation = true
+        endAngleManaged = startEndAngle
+        disableAnimation = false
+    }
+    
+    fileprivate func withDisabledAnimation(f: () -> Void) {
+        disableAnimation = true
+        f()
+        disableAnimation = false
+    }
+    
+    func setStartAngle(angle: CGFloat, animated: Bool) {
+        let f = {self.startAngleManaged = angle}
+        if animated {
+            f()
+        } else {
+            withDisabledAnimation {
+                f()
+            }
+        }
+    }
+    
+    func setEndAngle(angle: CGFloat, animated: Bool) {
+        let f = {self.endAngleManaged = angle}
+        if animated {
+            f()
+        } else {
+            withDisabledAnimation {
+                f()
+            }
+        }
+    }
+    
     func startAnim() {
-        rotate(angle: referenceAngle)
-        
+        //rotate(angle: referenceAngle)
         startAngleManaged = startAngle
         endAngleManaged = endAngle
     }
     
-    fileprivate func rotate(angle: CGFloat) {
+    func rotate(angle: CGFloat) {
         var transform = CATransform3DIdentity
         transform = CATransform3DTranslate(transform, center.x - position.x, center.y - position.y, 0)
         transform = CATransform3DRotate(transform, angle, 0, 0, 1)
@@ -115,9 +161,14 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     
     func makeAnimationForKey(_ key: String) -> CABasicAnimation {
         let anim = CABasicAnimation(keyPath: key)
-        anim.fromValue = 0
+        
+        let from = key == "startAngleManaged" ? startAngleManaged : endAngleManaged
+        
+        anim.fromValue = from
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        
         anim.duration = 0.5
+        
         anim.delegate = self
         return anim
     }
@@ -133,6 +184,10 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     }
     
     open override func action(forKey event: String) -> CAAction? {
+        if disableAnimation {
+            return NSNull()
+        }
+        
         if event == "startAngleManaged" || event == "endAngleManaged" {
             return makeAnimationForKey(event)
         }
@@ -217,4 +272,10 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         
         return min(smallestStartAngleDistance, smallestEndAngleDistance) * 2
     }
+    
+    
+    open override var debugDescription: String {
+        return "{data: \(sliceData), start: \(startAngle.radiansToDegrees), end: \(endAngle.radiansToDegrees)}"
+    }
+  
 }

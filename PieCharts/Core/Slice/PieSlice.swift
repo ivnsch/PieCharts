@@ -10,7 +10,7 @@ import UIKit
 
 public struct PieSlice: Hashable, CustomDebugStringConvertible {
     public let view: PieSliceLayer
-    public let data: PieSliceData
+    public internal(set) var data: PieSliceData
 
     public init(data: PieSliceData, view: PieSliceLayer) {
         self.data = data

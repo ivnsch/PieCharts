@@ -15,6 +15,7 @@ Swift 3.0, iOS 8+
 - Add overlays using simple UIViews
 - Interactive
 - Animated
+- Dynamic slice insertion
 - Reusable components via extensible layer system
 - Autolayout support
 - [Legends](https://github.com/i-schuetz/ChartLegends). This is in a separate project to keep things focused and reusable.
@@ -110,6 +111,12 @@ func onGenerateSlice(slice: PieSlice)
 func onStartAnimation(slice: PieSlice)
 func onEndAnimation(slice: PieSlice)
 func onSelected(slice: PieSlice, selected: Bool)
+```
+
+###Dynamic slice insertion:
+
+```swift
+chartView.insertSlice(index: 1, model: PieSliceModel(value: 5, color: UIColor.blue))
 ```
 
 ## Contributing

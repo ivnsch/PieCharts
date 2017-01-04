@@ -8,11 +8,11 @@
 
 import UIKit
 
-public struct PieSliceData: CustomDebugStringConvertible {
+public class PieSliceData: CustomDebugStringConvertible {
     
     public let model: PieSliceModel
-    public let id: Int
-    public let percentage: Double
+    public internal(set) var id: Int
+    public internal(set) var percentage: Double
     
     public init(model: PieSliceModel, id: Int, percentage: Double) {
         self.model = model

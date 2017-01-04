@@ -11,4 +11,10 @@ import UIKit
 public protocol PieChartLayer: PieChartDelegate {
     
     var chart: PieChart? {get set}
+    
+    func onEndAnimation(slice: PieSlice)
+
+    func addItems(slice: PieSlice)
+
+    func clear()
 }

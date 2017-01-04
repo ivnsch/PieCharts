@@ -34,12 +34,17 @@ open class PieLineTextLayer: PieChartLayer {
     public init() {}
     
     public func onEndAnimation(slice: PieSlice) {
+        addItems(slice: slice)
+    }
+    
+    public func addItems(slice: PieSlice) {
         guard sliceViews[slice] == nil else {return}
         
         let p1 = slice.view.calculatePosition(angle: slice.view.midAngle, p: slice.view.center, offset: slice.view.outerRadius + settings.chartOffset)
         let p2 = slice.view.calculatePosition(angle: slice.view.midAngle, p: slice.view.center, offset: slice.view.outerRadius + settings.segment1Length)
         
-        let isRightSide = slice.view.midAngle > 0 && slice.view.midAngle <= (CGFloat.pi / 2) || (slice.view.midAngle > (CGFloat.pi * 3 / 2) && slice.view.midAngle <= CGFloat.pi * 2)
+        let angle = slice.view.midAngle.truncatingRemainder(dividingBy: (CGFloat.pi * 2))
+        let isRightSide = angle >= 0 && angle <= (CGFloat.pi / 2) || (angle > (CGFloat.pi * 3 / 2) && angle <= CGFloat.pi * 2)
         
         let p3 = CGPoint(x: p2.x + (isRightSide ? settings.segment2Length : -settings.segment2Length), y: p2.y)
         
@@ -96,5 +101,13 @@ open class PieLineTextLayer: PieChartLayer {
         }
         
         layer.position = slice.view.calculatePosition(angle: slice.view.midAngle, p: layer.position, offset: offset)
+    }
+    
+    public func clear() {
+        for (_, layerView) in sliceViews {
+            layerView.0.removeFromSuperlayer()
+            layerView.1.removeFromSuperview()
+        }
+        sliceViews.removeAll()
     }
 }

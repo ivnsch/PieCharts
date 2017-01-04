@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,8 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrE-MA-gZz">
+                    <rect key="frame" x="157.5" y="538" width="60" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HTj-pr-V2G"/>
+                        <constraint firstAttribute="width" constant="60" id="vm1-cc-qIV"/>
+                    </constraints>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="onPlusTapWithSender:" destination="-1" eventType="touchUpInside" id="or8-Ts-d2T"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8e5-dN-cUT" customClass="PieChart" customModule="PieCharts">
-                    <rect key="frame" x="0.0" y="159" width="375" height="350"/>
+                    <rect key="frame" x="0.0" y="158" width="375" height="350"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="350" id="FZ3-GW-vPI"/>
                     </constraints>
@@ -29,9 +40,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="zrE-MA-gZz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2E0-p9-KPW"/>
                 <constraint firstItem="8e5-dN-cUT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4ut-Xb-nGg"/>
                 <constraint firstAttribute="trailing" secondItem="8e5-dN-cUT" secondAttribute="trailing" id="64V-6O-HgE"/>
                 <constraint firstItem="8e5-dN-cUT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CRG-Tv-u5E"/>
+                <constraint firstItem="zrE-MA-gZz" firstAttribute="top" secondItem="8e5-dN-cUT" secondAttribute="bottom" constant="30" id="FVy-yi-3e0"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>

@@ -28,6 +28,10 @@ open class PiePlainTextLayer: PieChartLayer {
     public init() {}
     
     public func onEndAnimation(slice: PieSlice) {
+        addItems(slice: slice)
+    }
+    
+    public func addItems(slice: PieSlice) {
         guard sliceViews[slice] == nil else {return}
         
         let label: UILabel = settings.label.labelGenerator?(slice) ?? {
@@ -67,5 +71,12 @@ open class PiePlainTextLayer: PieChartLayer {
         UIView.animate(withDuration: 0.15) {
             label.center = p
         }
+    }
+    
+    public func clear() {
+        for (_, view) in sliceViews {
+            view.removeFromSuperview()
+        }
+        sliceViews.removeAll()
     }
 }

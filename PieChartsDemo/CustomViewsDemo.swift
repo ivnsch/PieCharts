@@ -18,7 +18,6 @@ class CustomViewsDemo: UIViewController, PieChartDelegate {
         var settings = PieChartSettings()
         settings.innerRadius = 0
         settings.outerRadius = 100
-        settings.referenceAngle = 0
         settings.selectedOffset = 30
         
         chartView.settings = settings

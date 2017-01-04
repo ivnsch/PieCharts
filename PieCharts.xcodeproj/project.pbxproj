@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A85B42C1E1DDB25007CA217 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A85B42B1E1DDB25007CA217 /* Int.swift */; };
+		6A85B42E1E1DDB44007CA217 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A85B42D1E1DDB44007CA217 /* FloatingPoint.swift */; };
 		6AAD967D1E1C030E00BABC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96701E1C030E00BABC91 /* AppDelegate.swift */; };
 		6AAD967E1E1C030E00BABC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD96711E1C030E00BABC91 /* Assets.xcassets */; };
 		6AAD967F1E1C030E00BABC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD96721E1C030E00BABC91 /* LaunchScreen.storyboard */; };
@@ -69,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6A85B42B1E1DDB25007CA217 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		6A85B42D1E1DDB44007CA217 /* FloatingPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
 		6AAD96701E1C030E00BABC91 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AAD96711E1C030E00BABC91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AAD96731E1C030E00BABC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				6AAD96971E1C075300BABC91 /* CGPoint.swift */,
 				6AAD96981E1C075300BABC91 /* CGRect.swift */,
 				6AAD96991E1C075300BABC91 /* CGSize.swift */,
+				6A85B42B1E1DDB25007CA217 /* Int.swift */,
+				6A85B42D1E1DDB44007CA217 /* FloatingPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,12 +447,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AAD96DA1E1C07B300BABC91 /* PieLineTextLayerAnimator.swift in Sources */,
+				6A85B42E1E1DDB44007CA217 /* FloatingPoint.swift in Sources */,
 				6AAD96CE1E1C07A300BABC91 /* PieSliceDelegate.swift in Sources */,
 				6AAD96D41E1C07A300BABC91 /* CGRect.swift in Sources */,
 				6AAD96CF1E1C07A300BABC91 /* PieSliceLayer.swift in Sources */,
 				6AAD96DC1E1C07B300BABC91 /* PiePlainTextLayer.swift in Sources */,
 				6AAD96CB1E1C07A300BABC91 /* PieChartDelegate.swift in Sources */,
 				6AAD96D51E1C07A300BABC91 /* CGSize.swift in Sources */,
+				6A85B42C1E1DDB25007CA217 /* Int.swift in Sources */,
 				6AAD96CA1E1C07A300BABC91 /* PieChart.swift in Sources */,
 				6AAD96D61E1C07A300BABC91 /* Globals.swift in Sources */,
 				6AAD96D21E1C07A300BABC91 /* PieSliceModel.swift in Sources */,

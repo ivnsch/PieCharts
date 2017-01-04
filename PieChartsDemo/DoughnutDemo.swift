@@ -13,12 +13,28 @@ class DoughnutDemo: UIViewController, PieChartDelegate {
     
     @IBOutlet weak var chartView: PieChart!
     
+    fileprivate static let alpha: CGFloat = 0.5
+    let colors = [
+        UIColor.yellow.withAlphaComponent(alpha),
+        UIColor.green.withAlphaComponent(alpha),
+        UIColor.purple.withAlphaComponent(alpha),
+        UIColor.cyan.withAlphaComponent(alpha),
+        UIColor.darkGray.withAlphaComponent(alpha),
+        UIColor.red.withAlphaComponent(alpha),
+        UIColor.magenta.withAlphaComponent(alpha),
+        UIColor.orange.withAlphaComponent(alpha),
+        UIColor.brown.withAlphaComponent(alpha),
+        UIColor.lightGray.withAlphaComponent(alpha),
+        UIColor.gray.withAlphaComponent(alpha),
+    ]
+    fileprivate var currentColorIndex = 0
+
+    
     override func viewDidAppear(_ animated: Bool) {
         
         var settings = PieChartSettings()
         settings.innerRadius = 70
         settings.outerRadius = 100
-        settings.referenceAngle = 0
         settings.selectedOffset = 30
         
         chartView.settings = settings
@@ -36,24 +52,18 @@ class DoughnutDemo: UIViewController, PieChartDelegate {
     // MARK: - Models
     
     fileprivate func createModels() -> [PieSliceModel] {
-        let alpha: CGFloat = 0.5
-        
-        return [
-            PieSliceModel(value: 2.1, color: UIColor.yellow.withAlphaComponent(alpha)),
-            PieSliceModel(value: 3, color: UIColor.blue.withAlphaComponent(alpha)),
-            PieSliceModel(value: 1, color: UIColor.green.withAlphaComponent(alpha)),
-            PieSliceModel(value: 4, color: UIColor.cyan.withAlphaComponent(alpha)),
-            PieSliceModel(value: 2, color: UIColor.red.withAlphaComponent(alpha)),
-            PieSliceModel(value: 1.5, color: UIColor.magenta.withAlphaComponent(alpha)),
-            PieSliceModel(value: 0.5, color: UIColor.orange.withAlphaComponent(alpha)),
-            PieSliceModel(value: 2.1, color: UIColor.black.withAlphaComponent(alpha)),
-            PieSliceModel(value: 3, color: UIColor.brown.withAlphaComponent(alpha)),
-            PieSliceModel(value: 1, color: UIColor.lightGray.withAlphaComponent(alpha)),
-            PieSliceModel(value: 4, color: UIColor.darkGray.withAlphaComponent(alpha)),
-            PieSliceModel(value: 2, color: UIColor.gray.withAlphaComponent(alpha)),
-            PieSliceModel(value: 1.5, color: UIColor.purple.withAlphaComponent(alpha))
+
+        let models = [
+            PieSliceModel(value: 2, color: colors[0]),
+            PieSliceModel(value: 2, color: colors[1]),
+            PieSliceModel(value: 2, color: colors[2])
         ]
+        
+        currentColorIndex = models.count
+        return models
     }
+    
+
     
     // MARK: - Layers
     
@@ -79,7 +89,34 @@ class DoughnutDemo: UIViewController, PieChartDelegate {
         let lineTextLayer = PieLineTextLayer()
         var lineTextLayerSettings = PieLineTextLayerSettings()
         lineTextLayerSettings.lineColor = UIColor.lightGray
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 1
+        lineTextLayerSettings.label.font = UIFont.systemFont(ofSize: 14)
+        lineTextLayerSettings.label.textGenerator = {slice in
+            return formatter.string(from: slice.data.model.value as NSNumber).map{"\($0)"} ?? ""
+        }
+        
         lineTextLayer.settings = lineTextLayerSettings
         return lineTextLayer
+    }
+    
+    @IBAction func onPlusTap(sender: UIButton) {
+        let newModel = PieSliceModel(value: 4 * Double(CGFloat.random()), color: colors[currentColorIndex])
+        chartView.insertSlice(index: 0, model: newModel)
+        currentColorIndex = (currentColorIndex + 1) % colors.count
+        if currentColorIndex == 2 {currentColorIndex += 1} // avoid same contiguous color
+    }
+}
+
+
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
+    }
+}
+
+extension UIColor {
+    static func randomColor() -> UIColor {
+        return UIColor(red: .random(), green: .random(), blue: .random(), alpha: 1.0)
     }
 }
