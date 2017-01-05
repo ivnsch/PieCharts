@@ -84,6 +84,7 @@ open class PieChart: UIView {
         slice.view.outerRadius = settings.outerRadius
         slice.view.referenceAngle = settings.referenceAngle
         slice.view.selectedOffset = settings.selectedOffset
+        slice.view.animDuration = settings.animDuration
         
         slice.view.sliceDelegate = self
      

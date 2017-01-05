@@ -19,6 +19,7 @@ class CustomViewsDemo: UIViewController, PieChartDelegate {
         settings.innerRadius = 0
         settings.outerRadius = 100
         settings.selectedOffset = 30
+        settings.animDuration = 0.5
         
         chartView.settings = settings
         chartView.models = createModels()

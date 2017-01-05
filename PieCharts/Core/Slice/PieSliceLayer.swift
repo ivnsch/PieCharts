@@ -35,6 +35,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     public var outerRadius: CGFloat = 100
     var referenceAngle: CGFloat = CGFloat.pi * 3 / 2 // Top center
     public var selectedOffset: CGFloat = 30
+    var animDuration: Double = 0.5
     
     public weak var sliceDelegate: PieSliceDelegate?
  
@@ -166,8 +167,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         
         anim.fromValue = from
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        
-        anim.duration = 0.5
+        anim.duration = animDuration
         
         anim.delegate = self
         return anim

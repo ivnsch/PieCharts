@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 [Unreleased]
 Dynamic slice insertion
+Allow to set anim duration in settings
 
 ## [0.0.1] - 2017-01-02
 Initial import

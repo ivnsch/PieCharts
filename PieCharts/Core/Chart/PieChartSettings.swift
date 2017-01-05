@@ -14,6 +14,7 @@ public struct PieChartSettings {
     public var outerRadius: CGFloat = 100
     var referenceAngle: CGFloat = 0
     public var selectedOffset: CGFloat = 30
+    public var animDuration: Double = 0.5
     
     public init() {}
 }
