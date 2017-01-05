@@ -8,6 +8,8 @@ Easy to use and highly customizable pie charts library for iOS
 
 Swift 3.0, iOS 8+
 
+[Video](https://youtu.be/LPFTPMDKDAE)
+
 ![ScreenShot](Screenshots/IMG_1279.PNG)![ScreenShot](Screenshots/IMG_1278.PNG)
 
 ## Features:
