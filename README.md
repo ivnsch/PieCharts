@@ -55,8 +55,6 @@ chartView.models = [
 ]
 ```
 
-If you need custom models, to be able to display additional informations, you can use subclasses of `PieSliceModel` instead of tuples.
-
 ###Overlays:
 
 Overlays are implemented using layers. There are several built in layers and you also can implement your own ones. 
