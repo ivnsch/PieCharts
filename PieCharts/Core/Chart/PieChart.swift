@@ -100,7 +100,7 @@ open class PieChart: UIView {
             
             slice.view.rotate(angle: slice.view.referenceAngle)
             
-            slice.view.startAnim()
+            slice.view.present(animated: settings.animated)
         }
     }
     
@@ -139,8 +139,8 @@ open class PieChart: UIView {
         
         container.addSublayer(slice.view)
         
-        slice.view.setEndAngle(angle: slice.view.startAngle, animated: false)
-        slice.view.startAnim()
+        slice.view.presentEndAngle(angle: slice.view.startAngle, animated: false)
+        slice.view.present(animated: settings.animated)
         
         let slicesToAdjust = Array(slices[index..<slices.count]) + Array(slices[0..<index])
         

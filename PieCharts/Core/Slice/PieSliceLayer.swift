@@ -22,9 +22,9 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     
     var angles: (CGFloat, CGFloat) = (0, 0) {
         didSet {
-            self.startAngle = angles.0
-            self.endAngle = angles.1
-            startAnim()
+            startAngle = angles.0
+            endAngle = angles.1
+            present(animated: true)
         }
     }
     
@@ -90,20 +90,13 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     
     var disableAnimation: Bool = false
     
-    
-    func setStartAngles(startEndAngle: CGFloat) {
-        disableAnimation = true
-        endAngleManaged = startEndAngle
-        disableAnimation = false
-    }
-    
     fileprivate func withDisabledAnimation(f: () -> Void) {
         disableAnimation = true
         f()
         disableAnimation = false
     }
-    
-    func setStartAngle(angle: CGFloat, animated: Bool) {
+
+    func presentStartAngle(angle: CGFloat, animated: Bool) {
         let f = {self.startAngleManaged = angle}
         if animated {
             f()
@@ -114,7 +107,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         }
     }
     
-    func setEndAngle(angle: CGFloat, animated: Bool) {
+    func presentEndAngle(angle: CGFloat, animated: Bool) {
         let f = {self.endAngleManaged = angle}
         if animated {
             f()
@@ -125,10 +118,10 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         }
     }
     
-    func startAnim() {
+    func present(animated: Bool) {
         //rotate(angle: referenceAngle)
-        startAngleManaged = startAngle
-        endAngleManaged = endAngle
+        presentStartAngle(angle: startAngle, animated: animated)
+        presentEndAngle(angle: endAngle, animated: animated)
     }
     
     func rotate(angle: CGFloat) {

@@ -18,5 +18,9 @@ public struct PieChartSettings {
     public var strokeColor: UIColor = UIColor.black
     public var strokeWidth: CGFloat = 0
     
+    var animated: Bool {
+        return animDuration > 0
+    }
+    
     public init() {}
 }
