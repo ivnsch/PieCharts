@@ -22,7 +22,6 @@
 		6AAD968A1E1C053100BABC91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD96891E1C053100BABC91 /* Info.plist */; };
 		6AAD96CA1E1C07A300BABC91 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD968F1E1C075300BABC91 /* PieChart.swift */; };
 		6AAD96CB1E1C07A300BABC91 /* PieChartDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96901E1C075300BABC91 /* PieChartDelegate.swift */; };
-		6AAD96CC1E1C07A300BABC91 /* PieChartSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96911E1C075300BABC91 /* PieChartSettings.swift */; };
 		6AAD96CD1E1C07A300BABC91 /* PieSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96931E1C075300BABC91 /* PieSlice.swift */; };
 		6AAD96CE1E1C07A300BABC91 /* PieSliceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96941E1C075300BABC91 /* PieSliceDelegate.swift */; };
 		6AAD96CF1E1C07A300BABC91 /* PieSliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96951E1C075300BABC91 /* PieSliceLayer.swift */; };
@@ -86,7 +85,6 @@
 		6AAD96891E1C053100BABC91 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AAD968F1E1C075300BABC91 /* PieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		6AAD96901E1C075300BABC91 /* PieChartDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartDelegate.swift; sourceTree = "<group>"; };
-		6AAD96911E1C075300BABC91 /* PieChartSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartSettings.swift; sourceTree = "<group>"; };
 		6AAD96931E1C075300BABC91 /* PieSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSlice.swift; sourceTree = "<group>"; };
 		6AAD96941E1C075300BABC91 /* PieSliceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceDelegate.swift; sourceTree = "<group>"; };
 		6AAD96951E1C075300BABC91 /* PieSliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 			children = (
 				6AAD968F1E1C075300BABC91 /* PieChart.swift */,
 				6AAD96901E1C075300BABC91 /* PieChartDelegate.swift */,
-				6AAD96911E1C075300BABC91 /* PieChartSettings.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -463,7 +460,6 @@
 				6AAD96D71E1C07B300BABC91 /* PieChartLabelSettings.swift in Sources */,
 				6AAD96DD1E1C07B300BABC91 /* AlphaPieViewLayerAnimator.swift in Sources */,
 				6AAD96D11E1C07A300BABC91 /* PieSliceData.swift in Sources */,
-				6AAD96CC1E1C07A300BABC91 /* PieChartSettings.swift in Sources */,
 				6AAD96D31E1C07A300BABC91 /* CGPoint.swift in Sources */,
 				6AAD96DF1E1C07B300BABC91 /* PieViewLayer.swift in Sources */,
 				6AAD96DE1E1C07B300BABC91 /* PieViewLayerAnimator.swift in Sources */,

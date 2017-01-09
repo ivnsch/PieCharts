@@ -31,14 +31,7 @@ class DoughnutDemo: UIViewController, PieChartDelegate {
 
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        var settings = PieChartSettings()
-        settings.innerRadius = 70
-        settings.outerRadius = 100
-        settings.selectedOffset = 30
-        settings.animDuration = 0.5
-        
-        chartView.settings = settings
+
         chartView.models = createModels()
         chartView.layers = [createPlainTextLayer(), createTextWithLinesLayer()]
         chartView.delegate = self

@@ -10,6 +10,23 @@ import UIKit
 
 @IBDesignable open class PieChart: UIView {
     
+    // MARK: - Settings
+    
+    @IBInspectable public var innerRadius: CGFloat = 50
+    @IBInspectable public var outerRadius: CGFloat = 100
+    @IBInspectable public var strokeColor: UIColor = UIColor.black
+    @IBInspectable public var strokeWidth: CGFloat = 0
+    @IBInspectable public var selectedOffset: CGFloat = 30
+    @IBInspectable public var animDuration: Double = 0.5
+    
+    var referenceAngle: CGFloat = 0
+    
+    var animated: Bool {
+        return animDuration > 0
+    }
+
+    // MARK: -
+    
     public fileprivate(set) var container: CALayer = CALayer()
     
     fileprivate var slices: [PieSlice] = []
@@ -22,8 +39,6 @@ import UIKit
             }
         }
     }
-    
-    public var settings = PieChartSettings()
     
     public weak var delegate: PieChartDelegate?
     
@@ -80,13 +95,13 @@ import UIKit
         
         slice.view.sliceData = data
         
-        slice.view.innerRadius = settings.innerRadius
-        slice.view.outerRadius = settings.outerRadius
-        slice.view.referenceAngle = settings.referenceAngle
-        slice.view.selectedOffset = settings.selectedOffset
-        slice.view.animDuration = settings.animDuration
-        slice.view.strokeColor = settings.strokeColor
-        slice.view.strokeWidth = settings.strokeWidth
+        slice.view.innerRadius = innerRadius
+        slice.view.outerRadius = outerRadius
+        slice.view.selectedOffset = selectedOffset
+        slice.view.animDuration = animDuration
+        slice.view.strokeColor = strokeColor
+        slice.view.strokeWidth = strokeWidth
+        slice.view.referenceAngle = referenceAngle
         
         slice.view.sliceDelegate = self
      
@@ -100,7 +115,7 @@ import UIKit
             
             slice.view.rotate(angle: slice.view.referenceAngle)
             
-            slice.view.present(animated: settings.animated)
+            slice.view.present(animated: animated)
         }
     }
     
@@ -140,7 +155,7 @@ import UIKit
         container.addSublayer(slice.view)
         
         slice.view.presentEndAngle(angle: slice.view.startAngle, animated: false)
-        slice.view.present(animated: settings.animated)
+        slice.view.present(animated: animated)
         
         let slicesToAdjust = Array(slices[index..<slices.count]) + Array(slices[0..<index])
         
@@ -178,19 +193,14 @@ import UIKit
     }
     
     open override func prepareForInterfaceBuilder() {
-        var settings = PieChartSettings()
-        settings.innerRadius = 70
-        settings.outerRadius = 100
-        settings.selectedOffset = 30
-        settings.animDuration = 0
-        settings.strokeWidth = 2
-        settings.strokeColor = UIColor.lightGray
+        animDuration = 0
+        strokeWidth = 1
+        strokeColor = UIColor.lightGray
         
-        let models = (0..<5).map {_ in 
+        let models = (0..<6).map {_ in
             PieSliceModel(value: 2, color: UIColor.clear)
         }
         
-        self.settings = settings
         self.models = models
     }
 }
