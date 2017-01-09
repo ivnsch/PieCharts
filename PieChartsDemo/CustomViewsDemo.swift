@@ -16,7 +16,7 @@ class CustomViewsDemo: UIViewController, PieChartDelegate {
     override func viewDidAppear(_ animated: Bool) {
         
         chartView.models = createModels()
-        chartView.layers = [createViewLayer(), createTextLayer()]
+        chartView.layers = [createCustomViewsLayer(), createTextLayer()]
         chartView.delegate = self
     }
     
@@ -44,10 +44,10 @@ class CustomViewsDemo: UIViewController, PieChartDelegate {
     
     // MARK: - Layers
     
-    fileprivate func createViewLayer() -> PieViewLayer {
-        let viewLayer = PieViewLayer()
+    fileprivate func createCustomViewsLayer() -> PieCustomViewsLayer {
+        let viewLayer = PieCustomViewsLayer()
         
-        let settings = PieViewLayerSettings()
+        let settings = PieCustomViewsLayerSettings()
         settings.viewRadius = 135
         settings.hideOnOverflow = false
         viewLayer.settings = settings

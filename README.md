@@ -89,11 +89,11 @@ textLayer.settings = textLayerSettings
 
 ```
 
-This is the views layer, which makes possible to create custom views:
+This is the custom views layer, which makes possible to create custom views:
 ```swift
-let viewLayer = PieViewLayer()
+let viewLayer = PieCustomViewsLayer()
 
-let settings = PieViewLayerSettings()
+let settings = PieCustomViewsLayerSettings()
 settings.viewRadius = 135
 settings.hideOnOverflow = false
 viewLayer.settings = settings

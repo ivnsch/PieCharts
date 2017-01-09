@@ -39,7 +39,7 @@
 		6AAD96DC1E1C07B300BABC91 /* PiePlainTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96A61E1C075300BABC91 /* PiePlainTextLayer.swift */; };
 		6AAD96DD1E1C07B300BABC91 /* AlphaPieViewLayerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96A91E1C075300BABC91 /* AlphaPieViewLayerAnimator.swift */; };
 		6AAD96DE1E1C07B300BABC91 /* PieViewLayerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96AA1E1C075300BABC91 /* PieViewLayerAnimator.swift */; };
-		6AAD96DF1E1C07B300BABC91 /* PieViewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96AB1E1C075300BABC91 /* PieViewLayer.swift */; };
+		6AAD96DF1E1C07B300BABC91 /* PieCustomViewsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96AB1E1C075300BABC91 /* PieCustomViewsLayer.swift */; };
 		6AAD96E31E1C089700BABC91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD96E11E1C089700BABC91 /* Info.plist */; };
 		6AC1CD4A1E1C013900120720 /* PieCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC1CD431E1C013900120720 /* PieCharts.framework */; };
 		6AC1CD4B1E1C013900120720 /* PieCharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC1CD431E1C013900120720 /* PieCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -98,7 +98,7 @@
 		6AAD96A61E1C075300BABC91 /* PiePlainTextLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiePlainTextLayer.swift; sourceTree = "<group>"; };
 		6AAD96A91E1C075300BABC91 /* AlphaPieViewLayerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaPieViewLayerAnimator.swift; sourceTree = "<group>"; };
 		6AAD96AA1E1C075300BABC91 /* PieViewLayerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieViewLayerAnimator.swift; sourceTree = "<group>"; };
-		6AAD96AB1E1C075300BABC91 /* PieViewLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieViewLayer.swift; sourceTree = "<group>"; };
+		6AAD96AB1E1C075300BABC91 /* PieCustomViewsLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieCustomViewsLayer.swift; sourceTree = "<group>"; };
 		6AAD96AC1E1C075300BABC91 /* PieChartLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartLayer.swift; sourceTree = "<group>"; };
 		6AAD96AE1E1C075300BABC91 /* PieSliceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
 		6AAD96AF1E1C075300BABC91 /* PieSliceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceModel.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				6AAD96A81E1C075300BABC91 /* Anim */,
-				6AAD96AB1E1C075300BABC91 /* PieViewLayer.swift */,
+				6AAD96AB1E1C075300BABC91 /* PieCustomViewsLayer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -461,7 +461,7 @@
 				6AAD96DD1E1C07B300BABC91 /* AlphaPieViewLayerAnimator.swift in Sources */,
 				6AAD96D11E1C07A300BABC91 /* PieSliceData.swift in Sources */,
 				6AAD96D31E1C07A300BABC91 /* CGPoint.swift in Sources */,
-				6AAD96DF1E1C07B300BABC91 /* PieViewLayer.swift in Sources */,
+				6AAD96DF1E1C07B300BABC91 /* PieCustomViewsLayer.swift in Sources */,
 				6AAD96DE1E1C07B300BABC91 /* PieViewLayerAnimator.swift in Sources */,
 				6AAD96CD1E1C07A300BABC91 /* PieSlice.swift in Sources */,
 				6AAD96D91E1C07B300BABC91 /* AlphaPieLineTextLayerAnimator.swift in Sources */,

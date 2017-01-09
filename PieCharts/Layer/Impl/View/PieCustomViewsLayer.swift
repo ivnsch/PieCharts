@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class PieViewLayerSettings {
+open class PieCustomViewsLayerSettings {
     
     public var viewRadius: CGFloat?
     
@@ -17,11 +17,11 @@ open class PieViewLayerSettings {
     public init() {}
 }
 
-open class PieViewLayer: PieChartLayer {
+open class PieCustomViewsLayer: PieChartLayer {
     
     public weak var chart: PieChart?
     
-    public var settings: PieViewLayerSettings = PieViewLayerSettings()
+    public var settings: PieCustomViewsLayerSettings = PieCustomViewsLayerSettings()
     
     public var onNotEnoughSpace: ((UIView, CGSize) -> Void)?
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class PiePlainTextLayerSettings: PieViewLayerSettings {
+open class PiePlainTextLayerSettings: PieCustomViewsLayerSettings {
     
     public var label: PieChartLabelSettings = PieChartLabelSettings()
 }
