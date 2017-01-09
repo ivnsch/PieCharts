@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class PieChart: UIView {
+@IBDesignable open class PieChart: UIView {
     
     public fileprivate(set) var container: CALayer = CALayer()
     
@@ -175,6 +175,23 @@ open class PieChart: UIView {
             slice.view.removeFromSuperlayer()
         }
         slices = []
+    }
+    
+    open override func prepareForInterfaceBuilder() {
+        var settings = PieChartSettings()
+        settings.innerRadius = 70
+        settings.outerRadius = 100
+        settings.selectedOffset = 30
+        settings.animDuration = 0
+        settings.strokeWidth = 2
+        settings.strokeColor = UIColor.lightGray
+        
+        let models = (0..<5).map {_ in 
+            PieSliceModel(value: 2, color: UIColor.clear)
+        }
+        
+        self.settings = settings
+        self.models = models
     }
 }
 

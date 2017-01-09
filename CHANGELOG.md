@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 Add border settings
+Implement IB preview
 
 ## [0.0.2] - 2017-01-06
 Dynamic slice insertion
