@@ -19,7 +19,7 @@ Swift 3.0, iOS 8+
 - Animated
 - Dynamic slice insertion
 - Reusable components via extensible layer system
-- Autolayout support
+- Configurable in interface builder
 - [Legends](https://github.com/i-schuetz/ChartLegends). This is in a separate project to keep things focused and reusable.
 
 ## Installation
@@ -54,6 +54,10 @@ chartView.models = [
     PieSliceModel(value: 1, color: UIColor.green)
 ]
 ```
+
+Configurable in interface builder, with live update of the view:
+
+![ScreenShot](Screenshots/IB.PNG)
 
 ###Overlays:
 
