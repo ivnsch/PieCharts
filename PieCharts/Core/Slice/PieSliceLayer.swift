@@ -36,6 +36,8 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     var referenceAngle: CGFloat = CGFloat.pi * 3 / 2 // Top center
     public var selectedOffset: CGFloat = 30
     var animDuration: Double = 0.5
+    var strokeColor: UIColor = UIColor.black
+    var strokeWidth: CGFloat = 0
     
     public weak var sliceDelegate: PieSliceDelegate?
  
@@ -209,8 +211,11 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         ctx.addPath(path)
         self.path = path
         
-        ctx.setFillColor(self.color.cgColor)
-        ctx.fillPath()
+        ctx.setFillColor(color.cgColor)
+        ctx.setStrokeColor(strokeColor.cgColor)
+        ctx.setLineWidth(strokeWidth)
+        
+        ctx.drawPath(using: CGPathDrawingMode.fillStroke)
     }
     
     required public init?(coder aDecoder: NSCoder) {

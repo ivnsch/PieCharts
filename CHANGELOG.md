@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+Add border settings
+
 ## [0.0.2] - 2017-01-06
 Dynamic slice insertion
 Allow to set anim duration in settings

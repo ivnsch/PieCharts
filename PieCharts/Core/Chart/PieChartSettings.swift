@@ -15,6 +15,8 @@ public struct PieChartSettings {
     var referenceAngle: CGFloat = 0
     public var selectedOffset: CGFloat = 30
     public var animDuration: Double = 0.5
+    public var strokeColor: UIColor = UIColor.black
+    public var strokeWidth: CGFloat = 0
     
     public init() {}
 }
