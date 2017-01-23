@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4170AA701E35FFD4008A9629 /* ProgrammaticalDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4170AA6F1E35FFD4008A9629 /* ProgrammaticalDemo.swift */; };
 		6A85B42C1E1DDB25007CA217 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A85B42B1E1DDB25007CA217 /* Int.swift */; };
 		6A85B42E1E1DDB44007CA217 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A85B42D1E1DDB44007CA217 /* FloatingPoint.swift */; };
 		6AAD967D1E1C030E00BABC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96701E1C030E00BABC91 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4170AA6F1E35FFD4008A9629 /* ProgrammaticalDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticalDemo.swift; sourceTree = "<group>"; };
 		6A85B42B1E1DDB25007CA217 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		6A85B42D1E1DDB44007CA217 /* FloatingPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
 		6AAD96701E1C030E00BABC91 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				6AAD96791E1C030E00BABC91 /* DoughnutDemo.swift */,
 				6AAD967A1E1C030E00BABC91 /* DoughnutDemo.xib */,
 				6AAD967C1E1C030E00BABC91 /* MasterViewController.swift */,
+				4170AA6F1E35FFD4008A9629 /* ProgrammaticalDemo.swift */,
 				6AAD96881E1C053100BABC91 /* Supporting files */,
 			);
 			path = PieChartsDemo;
@@ -475,6 +478,7 @@
 				6AAD96871E1C030E00BABC91 /* MasterViewController.swift in Sources */,
 				6AAD96841E1C030E00BABC91 /* DoughnutDemo.swift in Sources */,
 				6AAD96831E1C030E00BABC91 /* DetailViewController.swift in Sources */,
+				4170AA701E35FFD4008A9629 /* ProgrammaticalDemo.swift in Sources */,
 				6AAD96811E1C030E00BABC91 /* CustomViewsDemo.swift in Sources */,
 				6AAD967D1E1C030E00BABC91 /* AppDelegate.swift in Sources */,
 			);

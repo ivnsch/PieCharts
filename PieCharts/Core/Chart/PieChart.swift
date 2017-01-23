@@ -54,7 +54,7 @@ import UIKit
         return models.reduce(0){$0 + $1.value}
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         sharedInit()
     }
