@@ -66,7 +66,7 @@ class ProgrammaticalDemo: UIViewController, PieChartDelegate {
     
     fileprivate func createTextLayer() -> PiePlainTextLayer {
         let textLayerSettings = PiePlainTextLayerSettings()
-        textLayerSettings.viewRadius = 60
+        textLayerSettings.viewRadius = 75
         textLayerSettings.hideOnOverflow = true
         textLayerSettings.label.font = UIFont.systemFont(ofSize: 12)
         
