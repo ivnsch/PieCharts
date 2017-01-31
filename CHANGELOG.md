@@ -2,7 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.0.4] - 2017-01-31
+Rename PieViewLayer in PieCustomViewsLayer for better understability
+Make PieChart frame initialization public
 
 ## [0.0.3] - 2017-01-09
 Add border settings
