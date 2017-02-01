@@ -12,13 +12,26 @@ import UIKit
     
     // MARK: - Settings
     
+    /// Inner radius of slices - set this to 0 for "no gap".
     @IBInspectable public var innerRadius: CGFloat = 50
+    
+    /// Outer radius of slices.
     @IBInspectable public var outerRadius: CGFloat = 100
+    
+    /// Stroke (border) color of slices.
     @IBInspectable public var strokeColor: UIColor = UIColor.black
+    
+    /// Stroke (border) width of slices.
     @IBInspectable public var strokeWidth: CGFloat = 0
+    
+    /// Pt that will be added to (inner/outer)radius of slice when selecting it.
     @IBInspectable public var selectedOffset: CGFloat = 30
+    
+    /// Duration it takes to slices to expand.
     @IBInspectable public var animDuration: Double = 0.5
-    @IBInspectable public var referenceAngle: CGFloat = 0 // Degrees
+    
+    /// Start angle of chart, in degrees, clockwise. 0 is 3 o'clock, 90 is 6 o'clock, etc.
+    @IBInspectable public var referenceAngle: CGFloat = 0
     
     var animated: Bool {
         return animDuration > 0
