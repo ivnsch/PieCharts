@@ -49,6 +49,9 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="animDuration">
                             <real key="value" value="0.5"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="referenceAngle">
+                            <real key="value" value="270"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>

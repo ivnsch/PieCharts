@@ -18,8 +18,7 @@ import UIKit
     @IBInspectable public var strokeWidth: CGFloat = 0
     @IBInspectable public var selectedOffset: CGFloat = 30
     @IBInspectable public var animDuration: Double = 0.5
-    
-    var referenceAngle: CGFloat = 0
+    @IBInspectable public var referenceAngle: CGFloat = 0 // Degrees
     
     var animated: Bool {
         return animDuration > 0
@@ -101,7 +100,7 @@ import UIKit
         slice.view.animDuration = animDuration
         slice.view.strokeColor = strokeColor
         slice.view.strokeWidth = strokeWidth
-        slice.view.referenceAngle = referenceAngle
+        slice.view.referenceAngle = referenceAngle.degreesToRadians
         
         slice.view.sliceDelegate = self
      
@@ -153,6 +152,7 @@ import UIKit
         let (_, slice) = generateSlice(model: model, index: index, lastEndAngle: currentSliceAtIndexEndAngle, totalValue: model.value + totalValue)
         
         container.addSublayer(slice.view)
+        slice.view.rotate(angle: slice.view.referenceAngle)
         
         slice.view.presentEndAngle(angle: slice.view.startAngle, animated: false)
         slice.view.present(animated: animated)
