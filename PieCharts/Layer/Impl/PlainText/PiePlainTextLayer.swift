@@ -42,14 +42,26 @@ open class PiePlainTextLayer: PieChartLayer {
             return label
             }()
         
-        let text = settings.label.textGenerator(slice)
-        let size = (text as NSString).size(attributes: [NSFontAttributeName: settings.label.font])
+        let size: CGSize
+        
+        switch settings.label.type {
+        case .plain:
+            let text = settings.label.textGenerator(slice)
+            size = (text as NSString).size(attributes: [NSFontAttributeName: settings.label.font])
+        case .attributed:
+            size = settings.label.attributedTextGenerator(slice).size()
+        }
         
         let center = settings.viewRadius.map{slice.view.midPoint(radius: $0)} ?? slice.view.arcCenter
         let availableSize = CGSize(width: slice.view.maxRectWidth(center: center, height: size.height), height: size.height)
         
         if !settings.hideOnOverflow || availableSize.contains(size) {
-            label.text = text
+            switch settings.label.type {
+            case .plain:
+                label.text = settings.label.textGenerator(slice)
+            case .attributed:
+                label.attributedText = settings.label.attributedTextGenerator(slice)
+            }
             label.sizeToFit()
         } else {
             onNotEnoughSpace?(label, availableSize)
