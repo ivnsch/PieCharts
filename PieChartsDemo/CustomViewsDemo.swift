@@ -15,9 +15,9 @@ class CustomViewsDemo: UIViewController, PieChartDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        chartView.models = createModels()
         chartView.layers = [createCustomViewsLayer(), createTextLayer()]
         chartView.delegate = self
+        chartView.models = createModels() // order is important - models have to be set at the end
     }
     
     // MARK: - PieChartDelegate
