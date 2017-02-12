@@ -85,7 +85,13 @@ open class PieLineTextLayer: PieChartLayer {
             return label
             }()
         
-        label.text = settings.label.textGenerator(slice)
+        switch settings.label.type {
+        case .plain:
+            label.text = settings.label.textGenerator(slice)
+        case .attributed:
+            label.attributedText = settings.label.attributedTextGenerator(slice)
+        }
+        
         label.sizeToFit()
         label.frame.origin = CGPoint(x: referencePoint.x - (isRightSide ? 0 : label.frame.width) + ((isRightSide ? 1 : -1) * settings.labelOffset), y: referencePoint.y - label.frame.height / 2)
         
