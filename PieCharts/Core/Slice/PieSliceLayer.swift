@@ -122,6 +122,13 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         //rotate(angle: referenceAngle)
         presentStartAngle(angle: startAngle, animated: animated)
         presentEndAngle(angle: endAngle, animated: animated)
+        
+                
+        if !animated {
+            guard let data = sliceData else {return}
+            sliceDelegate?.onStartAnimation(slice: PieSlice(data: data, view: self))
+            sliceDelegate?.onEndAnimation(slice: PieSlice(data: data, view: self))
+        }
     }
     
     func rotate(angle: CGFloat) {
