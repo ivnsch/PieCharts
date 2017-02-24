@@ -31,7 +31,22 @@ import UIKit
     @IBInspectable public var animDuration: Double = 0.5
     
     /// Start angle of chart, in degrees, clockwise. 0 is 3 o'clock, 90 is 6 o'clock, etc.
-    @IBInspectable public var referenceAngle: CGFloat = 0
+    @IBInspectable public var referenceAngle: CGFloat = 0 {
+        didSet {
+            for layer in layers {
+                layer.clear()
+            }
+            
+            let delta = (referenceAngle - oldValue).degreesToRadians
+            for slice in slices {
+                slice.view.angles = (slice.view.startAngle + delta, slice.view.endAngle + delta)
+            }
+            
+            for slice in slices {
+                slice.view.present(animated: false)
+            }
+        }
+    }
     
     var animated: Bool {
         return animDuration > 0
