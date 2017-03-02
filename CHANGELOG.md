@@ -2,9 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.0.5]
 - Allow to set start angle
 - Add documentation to settings
+- Allow to rotate chart after initialization
+- Fix overlays not showing when not animated #10
 
 ## [0.0.4] - 2017-01-31
 - Rename PieViewLayer in PieCustomViewsLayer for better understability
