@@ -56,7 +56,7 @@ import UIKit
     
     public fileprivate(set) var container: CALayer = CALayer()
     
-    fileprivate var slices: [PieSlice] = []
+    public fileprivate(set) var slices: [PieSlice] = []
     
     public var models: [PieSliceModel] = [] {
         didSet {
