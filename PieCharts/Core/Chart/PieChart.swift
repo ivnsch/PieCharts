@@ -220,6 +220,15 @@ import UIKit
         slices = []
     }
     
+    public func clear() {
+        for layer in layers {
+            layer.clear()
+        }
+        layers = []
+        models = []
+        removeSlices()
+    }
+    
     open override func prepareForInterfaceBuilder() {
         animDuration = 0
         strokeWidth = 1
