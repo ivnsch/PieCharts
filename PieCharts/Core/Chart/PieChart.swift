@@ -131,7 +131,9 @@ import UIKit
         slice.view.referenceAngle = referenceAngle.degreesToRadians
         
         slice.view.sliceDelegate = self
-     
+
+        self.delegate?.onGenerateSlice(slice: slice)
+
         return (newEndAngle, slice)
     }
     
