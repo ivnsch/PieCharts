@@ -278,7 +278,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     
     
     open override var debugDescription: String {
-        return "{data: \(sliceData), start: \(startAngle.radiansToDegrees), end: \(endAngle.radiansToDegrees)}"
+        return "{data: \(String(describing: sliceData)), start: \(startAngle.radiansToDegrees), end: \(endAngle.radiansToDegrees)}"
     }
   
 }
