@@ -32,10 +32,19 @@ class DetailViewController: UIViewController {
     
     fileprivate func showExampleController(_ controller: UIViewController) {
         if let currentDemoController = currentDemoController {
-            currentDemoController.removeFromParentViewController()
+            #if swift(>=4.2)
+                currentDemoController.removeFromParent()
+            #else
+                currentDemoController.removeFromParentViewController()
+            #endif
             currentDemoController.view.removeFromSuperview()
         }
-        addChildViewController(controller)
+
+        #if swift(>=4.2)
+            addChild(controller)
+        #else
+            addChildViewController(controller)
+        #endif
         controller.view.frame = view.bounds
         view.addSubview(controller.view)
         currentDemoController = controller
