@@ -166,11 +166,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         let from = key == "startAngleManaged" ? startAngleManaged : endAngleManaged
         
         anim.fromValue = from
-        #if swift(>=4.2)
-            anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-        #else
-            anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        #endif
+        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         anim.duration = animDuration
         
         anim.delegate = self

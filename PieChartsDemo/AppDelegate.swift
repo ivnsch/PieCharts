@@ -12,11 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-    #if swift(>=4.2)
-        typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
-    #else
-        typealias LaunchOptions = [UIApplicationLaunchOptionsKey: Any]
-    #endif
+    typealias LaunchOptions = [UIApplication.LaunchOptionsKey: Any]
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptions?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
