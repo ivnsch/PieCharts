@@ -6,7 +6,7 @@
 
 Easy to use and highly customizable pie charts library for iOS
 
-Swift 4.0, iOS 8+
+Swift 4.2, iOS 8+
 
 [Video](https://youtu.be/LPFTPMDKDAE)
 

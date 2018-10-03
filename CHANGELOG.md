@@ -2,7 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.5]
+## [0.0.7] - 2018-10-03
+- Swift 4.2 support
+
+## [0.0.6] - 2018-02-18
+- Add method to completely clear chart
+- Allow to pass objects around with slice model
+- Add delegate call to generatedSlice
+- Minor fixes
+
+## [0.0.5] - 2017-03-03
 - Allow to set start angle
 - Add documentation to settings
 - Allow to rotate chart after initialization
