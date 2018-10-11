@@ -242,6 +242,11 @@ import UIKit
         
         self.models = models
     }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        container.frame = bounds
+    }
 }
 
 extension PieChart: PieSliceDelegate {
