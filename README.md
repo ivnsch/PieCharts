@@ -6,7 +6,7 @@
 
 Easy to use and highly customizable pie charts library for iOS
 
-Swift 3.0, iOS 8+
+Swift 4.2, iOS 8+
 
 [Video](https://youtu.be/LPFTPMDKDAE)
 
@@ -43,7 +43,7 @@ github "i-schuetz/PieCharts"
 
 ## Usage
 
-###Basic chart:
+### Basic chart:
 
 ```swift
 @IBOutlet weak var chartView: PieChart!
@@ -59,7 +59,7 @@ Configurable in interface builder, with live update of the view:
 
 ![ScreenShot](Screenshots/IB.PNG)
 
-###Overlays:
+### Overlays:
 
 Overlays are implemented using layers. There are several built in layers and you also can implement your own ones. 
 
@@ -106,7 +106,7 @@ viewLayer.viewGenerator = {slice, center in
 
 ```
 
-###Interactivity, events:
+### Interactivity, events:
 
 Conform to `PieChartDelegate` to react to interaction and other events:
 
@@ -117,7 +117,7 @@ func onEndAnimation(slice: PieSlice)
 func onSelected(slice: PieSlice, selected: Bool)
 ```
 
-###Dynamic slice insertion:
+### Dynamic slice insertion:
 
 ```swift
 chartView.insertSlice(index: 1, model: PieSliceModel(value: 5, color: UIColor.blue))
@@ -145,11 +145,11 @@ Ivan Schütz
 
 SwiftCharts is Copyright (c) 2017 Ivan Schütz and released as open source under the attached [Apache 2.0 license](LICENSE).
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,  
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR  
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  
 OTHER DEALINGS IN THE SOFTWARE.
 

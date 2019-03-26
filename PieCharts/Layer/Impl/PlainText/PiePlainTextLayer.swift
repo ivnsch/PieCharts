@@ -47,7 +47,7 @@ open class PiePlainTextLayer: PieChartLayer {
         switch settings.label.type {
         case .plain:
             let text = settings.label.textGenerator(slice)
-            size = (text as NSString).size(attributes: [NSFontAttributeName: settings.label.font])
+            size = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: settings.label.font])
         case .attributed:
             size = settings.label.attributedTextGenerator(slice).size()
         }

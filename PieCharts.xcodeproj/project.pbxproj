@@ -20,7 +20,6 @@
 		6AAD96841E1C030E00BABC91 /* DoughnutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96791E1C030E00BABC91 /* DoughnutDemo.swift */; };
 		6AAD96851E1C030E00BABC91 /* DoughnutDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD967A1E1C030E00BABC91 /* DoughnutDemo.xib */; };
 		6AAD96871E1C030E00BABC91 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD967C1E1C030E00BABC91 /* MasterViewController.swift */; };
-		6AAD968A1E1C053100BABC91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD96891E1C053100BABC91 /* Info.plist */; };
 		6AAD96CA1E1C07A300BABC91 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD968F1E1C075300BABC91 /* PieChart.swift */; };
 		6AAD96CB1E1C07A300BABC91 /* PieChartDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96901E1C075300BABC91 /* PieChartDelegate.swift */; };
 		6AAD96CD1E1C07A300BABC91 /* PieSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96931E1C075300BABC91 /* PieSlice.swift */; };
@@ -41,7 +40,6 @@
 		6AAD96DD1E1C07B300BABC91 /* AlphaPieViewLayerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96A91E1C075300BABC91 /* AlphaPieViewLayerAnimator.swift */; };
 		6AAD96DE1E1C07B300BABC91 /* PieViewLayerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96AA1E1C075300BABC91 /* PieViewLayerAnimator.swift */; };
 		6AAD96DF1E1C07B300BABC91 /* PieCustomViewsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD96AB1E1C075300BABC91 /* PieCustomViewsLayer.swift */; };
-		6AAD96E31E1C089700BABC91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD96E11E1C089700BABC91 /* Info.plist */; };
 		6AC1CD4A1E1C013900120720 /* PieCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC1CD431E1C013900120720 /* PieCharts.framework */; };
 		6AC1CD4B1E1C013900120720 /* PieCharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC1CD431E1C013900120720 /* PieCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -383,17 +381,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Ivan Schuetz";
 				TargetAttributes = {
 					6AC1CD421E1C013900120720 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 37QAPDY2PR;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					6AFF22B61E16DF520001B0A4 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 37QAPDY2PR;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -431,11 +431,9 @@
 			files = (
 				6AAD96851E1C030E00BABC91 /* DoughnutDemo.xib in Resources */,
 				6AAD96801E1C030E00BABC91 /* Main.storyboard in Resources */,
-				6AAD968A1E1C053100BABC91 /* Info.plist in Resources */,
 				6AAD967E1E1C030E00BABC91 /* Assets.xcassets in Resources */,
 				6AAD96821E1C030E00BABC91 /* CustomViewsDemo.xib in Resources */,
 				6AAD967F1E1C030E00BABC91 /* LaunchScreen.storyboard in Resources */,
-				6AAD96E31E1C089700BABC91 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.schuetz.PieCharts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -554,7 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.schuetz.PieCharts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -569,15 +567,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -619,15 +625,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -664,7 +678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.schuetz.PieChartsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -679,7 +693,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.schuetz.PieChartsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

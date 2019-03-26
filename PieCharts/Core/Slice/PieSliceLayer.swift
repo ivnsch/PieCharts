@@ -166,7 +166,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         let from = key == "startAngleManaged" ? startAngleManaged : endAngleManaged
         
         anim.fromValue = from
-        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         anim.duration = animDuration
         
         anim.delegate = self
@@ -278,7 +278,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     
     
     open override var debugDescription: String {
-        return "{data: \(sliceData), start: \(startAngle.radiansToDegrees), end: \(endAngle.radiansToDegrees)}"
+        return "{data: \(String(describing: sliceData)), start: \(startAngle.radiansToDegrees), end: \(endAngle.radiansToDegrees)}"
     }
   
 }

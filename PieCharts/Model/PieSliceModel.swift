@@ -13,14 +13,16 @@ public class PieSliceModel: CustomDebugStringConvertible {
     public let name: String?
     public let value: Double
     public let color: UIColor
+    public let obj: Any? /// optional object to pass around e.g. to the layer's text generators
     
-    public init(name: String? = nil, value: Double, color: UIColor) {
+    public init(name: String? = nil, value: Double, color: UIColor, obj: Any? = nil) {
         self.name = name
         self.value = value
         self.color = color
+        self.obj = obj
     }
     
     public var debugDescription: String {
-        return "{value: \(value)}"
+        return "{value: \(value), obj: \(String(describing: obj))}"
     }
 }
