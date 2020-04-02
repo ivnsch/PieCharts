@@ -9,7 +9,7 @@
 import UIKit
 
 enum Demo {
-    case doughnut, customViews, programmatical
+    case doughnut, customViews, programmatical, doughnutEdgeCase, customViewsEdgeCase
 }
 
 
@@ -20,7 +20,9 @@ class MasterViewController: UITableViewController {
     var demos: [(Demo, String)] = [
         (.doughnut, "Doughnut"),
         (.customViews, "Custom views"),
-        (.programmatical, "Programmatical")
+        (.programmatical, "Programmatical"),
+        (.doughnutEdgeCase, "Doughnut edge case"),
+        (.customViewsEdgeCase, "Custom views edge case"),
     ]
     
     override func viewDidLoad() {

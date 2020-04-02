@@ -19,6 +19,7 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
     
     fileprivate(set) var startAngle: CGFloat = 0
     fileprivate(set) var endAngle: CGFloat = 0
+    fileprivate(set) var labelExtraAngle: CGFloat = 0
     
     var angles: (CGFloat, CGFloat) = (0, 0) {
         didSet {
@@ -251,6 +252,12 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         return CGPoint(x: x + center.x, y: y + center.y)
     }
     
+    public func midPointForLabel(radius: CGFloat) -> CGPoint {
+        let x = cos(midAngleForLabel()) * radius
+        let y = sin(midAngleForLabel()) * radius
+        return CGPoint(x: x + center.x, y: y + center.y)
+    }
+    
     public func maxRectWidth(center: CGPoint, height: CGFloat) -> CGFloat {
         
         let startAngleCC = CGFloat.pi * 2 - startAngle + referenceAngle
@@ -276,6 +283,13 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         return min(smallestStartAngleDistance, smallestEndAngleDistance) * 2
     }
     
+    func setExtraAngleForLabel(_ angle: CGFloat) {
+        labelExtraAngle = angle
+    }
+    
+    func midAngleForLabel() -> CGFloat {
+        return midAngle + labelExtraAngle
+    }
     
     open override var debugDescription: String {
         return "{data: \(String(describing: sliceData)), start: \(startAngle.radiansToDegrees), end: \(endAngle.radiansToDegrees)}"

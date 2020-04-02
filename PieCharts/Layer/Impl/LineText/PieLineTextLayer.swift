@@ -24,7 +24,7 @@ public struct PieLineTextLayerSettings {
 open class PieLineTextLayer: PieChartLayer {
     
     public weak var chart: PieChart?
-    
+
     public var settings: PieLineTextLayerSettings = PieLineTextLayerSettings()
     
     fileprivate var sliceViews = [PieSlice: (CALayer, UILabel)]()
@@ -40,14 +40,16 @@ open class PieLineTextLayer: PieChartLayer {
     public func addItems(slice: PieSlice) {
         guard sliceViews[slice] == nil else {return}
         
+        calculateLabelExtraAngles()
+
         let p1 = slice.view.calculatePosition(angle: slice.view.midAngle, p: slice.view.center, offset: slice.view.outerRadius + settings.chartOffset)
-        let p2 = slice.view.calculatePosition(angle: slice.view.midAngle, p: slice.view.center, offset: slice.view.outerRadius + settings.segment1Length)
+        let p2 = slice.view.calculatePosition(angle: slice.view.midAngleForLabel(), p: slice.view.center, offset: slice.view.outerRadius + settings.segment1Length)
         
         let angle = slice.view.midAngle.truncatingRemainder(dividingBy: (CGFloat.pi * 2))
         let isRightSide = angle >= 0 && angle <= (CGFloat.pi / 2) || (angle > (CGFloat.pi * 3 / 2) && angle <= CGFloat.pi * 2)
         
         let p3 = CGPoint(x: p2.x + (isRightSide ? settings.segment2Length : -settings.segment2Length), y: p2.y)
-        
+
         let lineLayer = createLine(p1: p1, p2: p2, p3: p3)
         let label = createLabel(slice: slice, isRightSide: isRightSide, referencePoint: p3)
         
@@ -60,6 +62,27 @@ open class PieLineTextLayer: PieChartLayer {
         sliceViews[slice] = (lineLayer, label)
     }
     
+    public func calculateLabelExtraAngles() {
+        chart?.slices.forEach { calculateLabelExtraAngle(for: $0) }
+    }
+    
+    public func calculateLabelExtraAngle(for slice: PieSlice) {
+        guard let chart = chart else { return }
+        guard let labelOverlapAngleConst = chart.labelOverlapAngleConst else { return }
+        let sliceIndex = slice.data.id
+        guard sliceIndex > 0 else { return }
+        guard let previousSlice = chart.slices.filter({ $0.data.id == (sliceIndex - 1) }).first else { return }
+
+        let diffBetweenSlices = slice.view.midAngleForLabel() - previousSlice.view.midAngleForLabel()
+        if diffBetweenSlices > labelOverlapAngleConst {
+            // np wont intersect
+            return
+        }
+        
+        let newExtraAngleForSlice = previousSlice.view.midAngleForLabel() + labelOverlapAngleConst - slice.view.midAngle
+        slice.view.setExtraAngleForLabel( newExtraAngleForSlice )
+    }
+
     public func createLine(p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CALayer {
         let path = UIBezierPath()
         path.move(to: p1)
@@ -97,7 +120,7 @@ open class PieLineTextLayer: PieChartLayer {
         
         let offset = selected ? slice.view.selectedOffset : -slice.view.selectedOffset
         UIView.animate(withDuration: 0.15) {
-            label.center = slice.view.calculatePosition(angle: slice.view.midAngle, p: label.center, offset: offset)
+            label.center = slice.view.calculatePosition(angle: slice.view.midAngleForLabel(), p: label.center, offset: offset)
         }
         
         layer.position = slice.view.calculatePosition(angle: slice.view.midAngle, p: layer.position, offset: offset)

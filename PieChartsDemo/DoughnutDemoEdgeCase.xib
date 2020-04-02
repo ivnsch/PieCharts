@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DoughnutDemoEdgeCase" customModule="PieChartsDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="chartView" destination="8e5-dN-cUT" id="VGu-fy-lm8"/>
+                <outlet property="view" destination="iN0-l3-epB" id="RhV-FR-SeH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrE-MA-gZz">
+                    <rect key="frame" x="157.5" y="538.5" width="60" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HTj-pr-V2G"/>
+                        <constraint firstAttribute="width" constant="60" id="vm1-cc-qIV"/>
+                    </constraints>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="onPlusTapWithSender:" destination="-1" eventType="touchUpInside" id="or8-Ts-d2T"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8e5-dN-cUT" customClass="PieChart" customModule="PieCharts">
+                    <rect key="frame" x="0.0" y="158.5" width="375" height="350"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="350" id="FZ3-GW-vPI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="innerRadius">
+                            <real key="value" value="70"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="outerRadius">
+                            <real key="value" value="100"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedOffset">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="animDuration">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="referenceAngle">
+                            <real key="value" value="270"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zrE-MA-gZz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2E0-p9-KPW"/>
+                <constraint firstItem="8e5-dN-cUT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4ut-Xb-nGg"/>
+                <constraint firstAttribute="trailing" secondItem="8e5-dN-cUT" secondAttribute="trailing" id="64V-6O-HgE"/>
+                <constraint firstItem="8e5-dN-cUT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CRG-Tv-u5E"/>
+                <constraint firstItem="zrE-MA-gZz" firstAttribute="top" secondItem="8e5-dN-cUT" secondAttribute="bottom" constant="30" id="FVy-yi-3e0"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

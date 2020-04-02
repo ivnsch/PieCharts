@@ -26,6 +26,10 @@ class DetailViewController: UIViewController {
                 showExampleController(CustomViewsDemo())
             case .programmatical:
                 showExampleController(ProgrammaticalDemo())
+            case .doughnutEdgeCase:
+                showExampleController(DoughnutDemoEdgeCase())
+            case .customViewsEdgeCase:
+                showExampleController(CustomViewsDemoEdgeCase())
             }
         }
     }

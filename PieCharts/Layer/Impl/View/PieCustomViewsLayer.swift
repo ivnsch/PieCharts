@@ -40,8 +40,15 @@ open class PieCustomViewsLayer: PieChartLayer {
     public func addItems(slice: PieSlice) {
         guard sliceViews[slice] == nil else {return}
         
-        let center = settings.viewRadius.map{slice.view.midPoint(radius: $0)} ?? slice.view.arcCenter
+        calculateLabelExtraAngles()
         
+        let center: CGPoint
+        if let viewRadius = settings.viewRadius {
+            center = slice.view.midPointForLabel(radius: viewRadius)
+        } else {
+            center = slice.view.arcCenter
+        }
+
         guard let view = viewGenerator?(slice, center) else {print("Need a view generator to create views!"); return}
         
         let size = view.frame.size
@@ -61,6 +68,27 @@ open class PieCustomViewsLayer: PieChartLayer {
         animator.animate(view)
         
         sliceViews[slice] = view
+    }
+    
+    public func calculateLabelExtraAngles() {
+        chart?.slices.forEach { calculateLabelExtraAngle(for: $0) }
+    }
+    
+    public func calculateLabelExtraAngle(for slice: PieSlice) {
+        guard let chart = chart else { return }
+        guard let labelOverlapAngleConst = chart.labelOverlapAngleConst else { return }
+        let sliceIndex = slice.data.id
+        guard sliceIndex > 0 else { return }
+        guard let previousSlice = chart.slices.filter({ $0.data.id == (sliceIndex - 1) }).first else { return }
+
+        let diffBetweenSlices = slice.view.midAngleForLabel() - previousSlice.view.midAngleForLabel()
+        if diffBetweenSlices > labelOverlapAngleConst {
+            // np wont intersect
+            return
+        }
+        
+        let newExtraAngleForSlice = previousSlice.view.midAngleForLabel() + labelOverlapAngleConst - slice.view.midAngle
+        slice.view.setExtraAngleForLabel( newExtraAngleForSlice )
     }
     
     public func onSelected(slice: PieSlice, selected: Bool) {
