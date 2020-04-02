@@ -14,7 +14,7 @@ class CustomViewsDemoEdgeCase: UIViewController, PieChartDelegate {
     @IBOutlet weak var chartView: PieChart!
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        chartView.labelOverlapAngleConst = 0.3
         chartView.layers = [createCustomViewsLayer(), createTextLayer()]
         chartView.delegate = self
         chartView.models = createModels() // order is important - models have to be set at the end
