@@ -47,7 +47,10 @@ import UIKit
             }
         }
     }
-    
+
+    /// minimum required angle to prevent slice labels intersection
+    public var labelExtraAngleConst: CGFloat = 0.3
+
     var animated: Bool {
         return animDuration > 0
     }
