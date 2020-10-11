@@ -161,6 +161,7 @@ import UIKit
     public func insertSlice(index: Int, model: PieSliceModel) {
         
         guard index < slices.count else {print("Out of bounds index: \(index), slices count: \(slices.count), exit"); return}
+        guard model.value != 0 else {print("Cannot divide by 0 at index: \(index), exit"); return}
         
         for layer in layers {
             layer.clear()
