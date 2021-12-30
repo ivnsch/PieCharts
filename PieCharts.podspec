@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.authors = "Ivan Schuetz"
   s.ios.deployment_target = "8.0"
   s.source = { :git => "https://github.com/i-schuetz/PieCharts.git", :tag => s.version }
-  s.source_files = 'PieCharts/*.swift', 'PieCharts/**/*.swift'
+  s.source_files = 'Sources/PieCharts/*.swift', 'Sources/PieCharts/**/*.swift'
   s.frameworks = "Foundation", "UIKit", "CoreGraphics"
 end
