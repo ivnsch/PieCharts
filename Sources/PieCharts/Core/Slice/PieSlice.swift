@@ -17,8 +17,8 @@ public struct PieSlice: Hashable, CustomDebugStringConvertible {
         self.view = view
     }
     
-    public var hashValue: Int {
-        return data.id
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(data.id)
     }
     
     public var debugDescription: String {

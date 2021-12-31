@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol PieSliceDelegate: class {
+public protocol PieSliceDelegate: AnyObject {
     
     func onStartAnimation(slice: PieSlice)
     

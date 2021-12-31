@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol PieChartDelegate: class {
+public protocol PieChartDelegate: AnyObject {
     
     func onGenerateSlice(slice: PieSlice)
     
