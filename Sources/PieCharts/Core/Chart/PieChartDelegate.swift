@@ -9,21 +9,21 @@
 import UIKit
 
 public protocol PieChartDelegate: AnyObject {
-    
+
     func onGenerateSlice(slice: PieSlice)
-    
+
     func onStartAnimation(slice: PieSlice)
-    
+
     func onEndAnimation(slice: PieSlice)
-    
-    func onSelected(slice: PieSlice, selected: Bool)
+
+    func pieChart(_: PieChart, didSelectSlice: PieSlice, selected: Bool)
 }
 
 extension PieChartDelegate {
-    
+
     public func onGenerateSlice(slice: PieSlice) {}
-    
+
     public func onStartAnimation(slice: PieSlice) {}
-    
+
     public func onEndAnimation(slice: PieSlice) {}
 }

@@ -267,8 +267,9 @@ extension PieChart: PieSliceDelegate {
     
     public func onSelected(slice: PieSlice, selected: Bool) {
         for layer in layers {
-            layer.onSelected(slice: slice, selected: selected)
+            layer.pieChart(self, didSelectSlice: slice, selected: selected)
         }
-        delegate?.onSelected(slice: slice, selected: selected)
+
+        delegate?.pieChart(self, didSelectSlice: slice, selected: selected)
     }
 }

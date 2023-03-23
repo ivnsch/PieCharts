@@ -18,7 +18,7 @@ open class PieCustomViewsLayerSettings {
 }
 
 open class PieCustomViewsLayer: PieChartLayer {
-    
+
     public weak var chart: PieChart?
     
     public var settings: PieCustomViewsLayerSettings = PieCustomViewsLayerSettings()
@@ -62,10 +62,10 @@ open class PieCustomViewsLayer: PieChartLayer {
         
         sliceViews[slice] = view
     }
-    
-    public func onSelected(slice: PieSlice, selected: Bool) {
+
+    public func pieChart(_: PieChart, didSelectSlice slice: PieSlice, selected: Bool) {
         guard let label = sliceViews[slice] else {print("Invalid state: slice not in dictionary"); return}
-        
+
         let p = slice.view.calculatePosition(angle: slice.view.midAngle, p: label.center, offset: selected ? slice.view.selectedOffset : -slice.view.selectedOffset)
         UIView.animate(withDuration: 0.15) {
             label.center = p

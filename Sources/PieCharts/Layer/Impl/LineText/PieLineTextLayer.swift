@@ -22,7 +22,7 @@ public struct PieLineTextLayerSettings {
 }
 
 open class PieLineTextLayer: PieChartLayer {
-    
+
     public weak var chart: PieChart?
     
     public var settings: PieLineTextLayerSettings = PieLineTextLayerSettings()
@@ -92,16 +92,17 @@ open class PieLineTextLayer: PieChartLayer {
         return label
     }
     
-    public func onSelected(slice: PieSlice, selected: Bool) {
+    public func pieChart(_: PieChart, didSelectSlice slice: PieSlice, selected: Bool) {
         guard let (layer, label) = sliceViews[slice] else {print("Invalid state: slice not in dictionary"); return}
-        
+
         let offset = selected ? slice.view.selectedOffset : -slice.view.selectedOffset
         UIView.animate(withDuration: 0.15) {
             label.center = slice.view.calculatePosition(angle: slice.view.midAngle, p: label.center, offset: offset)
         }
-        
+
         layer.position = slice.view.calculatePosition(angle: slice.view.midAngle, p: layer.position, offset: offset)
     }
+
     
     public func clear() {
         for (_, layerView) in sliceViews {
